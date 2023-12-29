@@ -20,21 +20,19 @@ let divide = function(x,y){
 
 let operate = function(num1, num2, operator) {
     if (operator === '+' ) {
-        add(num1, num2)
+        return add(num1, num2)
     }
     else if (operator === '-') {
-        substract(num1, num2)
+        return substract(num1, num2)
     }
     else if (operator === '*' ) {
-        multiply(num1, num2)
+        return multiply(num1, num2)
     }
     else if (operator === '/' ) {
-        divide(num1, num2)
+        return divide(num1, num2)
     }
     else {
         return "error"
     }
 
 };
-
-console.log(operate(1,2,'+'))
