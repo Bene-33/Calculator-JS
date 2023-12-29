@@ -6,4 +6,8 @@ let substract = function (x, y) {
     return parseFloat(x) - parseFloat(y);
 };
 
-console.log(substract(1.5,3))
+let multiply = function(x,y){
+    return parseFloat(x) * parseFloat(y);
+};
+
+console.log(multiply(2.5,3))
