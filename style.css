@@ -21,10 +21,39 @@ body{
 }
 
 #display{
-    background-color: #babbc0;
+    background-color: #ffffff;
     height: 3em;
+    border-radius: 0.2em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-end;
+}
+
+#controls{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+#inputField{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+#numbers{
+    display:flex;
+    flex-direction: row-reverse;
+}
+
+button{
+    padding: 1em;
+    margin: 0.1em;
+    background-color: #bbd3eb;
+    border-radius: 10em;
+    border:#bbd3eb;
+}
+.number{
+    padding: 1em;
 }
