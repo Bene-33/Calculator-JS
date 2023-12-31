@@ -34,18 +34,22 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
+    flex-direction: column;
 }
 
-#inputField{
-    display:flex;
-    flex-wrap: wrap;
+#calculatorTop{
+    align-self: center;
 }
 
 #numbers{
+    width: 8em;
     display:flex;
-    flex-direction: row-reverse;
+    flex-wrap: wrap-reverse;
+    align-self: flex-start;
+
 }
+
+
 
 button{
     padding: 1em;
