@@ -41,16 +41,30 @@ body{
     align-self: center;
 }
 
+#calculatorMiddle{
+    display:flex;
+    justify-content: center;
+}
 #numbers{
     width: 8em;
     display:flex;
     flex-wrap: wrap-reverse;
     align-self: flex-start;
-
 }
 
+#operators{
+    width: 1em;
+    align-self: flex-end;
+    flex-wrap: wrap;
+}
 
+#calculatorBottom{
+    align-self: center;
+}
 
+#equal{
+    padding: 1em 2em;
+}
 button{
     padding: 1em;
     margin: 0.1em;
