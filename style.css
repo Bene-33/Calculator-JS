@@ -13,7 +13,7 @@ body{
 #calculator{
     display:flex;
     flex-direction: column;
-    width: 28em;
+    width: 20em;
     align-self: center;
     background-color: #4d4747;
     padding: 15px;
@@ -46,16 +46,17 @@ body{
     justify-content: center;
 }
 #numbers{
-    width: 8em;
+    padding: 1em;
     display:flex;
     flex-wrap: wrap-reverse;
-    align-self: flex-start;
+    align-self: center;
 }
 
 #operators{
-    width: 1em;
-    align-self: flex-end;
-    flex-wrap: wrap;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+
 }
 
 #calculatorBottom{
@@ -63,15 +64,20 @@ body{
 }
 
 #equal{
-    padding: 1em 2em;
+    padding: 2em 3em;
 }
 button{
-    padding: 1em;
+    padding: 2em;
     margin: 0.1em;
     background-color: #bbd3eb;
-    border-radius: 10em;
+    border-radius: 1em;
     border:#bbd3eb;
 }
 .number{
-    padding: 1em;
+    margin: 0.2em;
+}
+
+.operator{
+    margin: 0.3em;
+
 }
