@@ -43,13 +43,13 @@ body{
 
 #calculatorMiddle{
     display:flex;
-    justify-content: center;
+    align-items: center;
 }
 #numbers{
-    padding: 1em;
-    display:flex;
+    display: flex;
     flex-wrap: wrap-reverse;
-    align-self: center;
+    justify-content: flex-end;
+    align-self: flex-end;
 }
 
 #operators{
@@ -59,25 +59,10 @@ body{
 
 }
 
-#calculatorBottom{
-    align-self: center;
-}
-
-#equal{
-    padding: 2em 3em;
-}
 button{
     padding: 2em;
-    margin: 0.1em;
+    margin: 0.2em;
     background-color: #bbd3eb;
     border-radius: 1em;
     border:#bbd3eb;
-}
-.number{
-    margin: 0.2em;
-}
-
-.operator{
-    margin: 0.3em;
-
 }
