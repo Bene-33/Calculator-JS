@@ -13,7 +13,7 @@ body{
 #calculator{
     display:flex;
     flex-direction: column;
-    width: 17em;
+    width: 16em;
     align-self: center;
     background-color: #4d4747;
     padding: 15px;
@@ -22,7 +22,7 @@ body{
 
 #display{
     background-color: #ffffff;
-    height: 3em;
+    height: 5em;
     border-radius: 0.2em;
     display: flex;
     flex-direction: column;
@@ -86,4 +86,13 @@ button{
 .operator{
     background-color: #826767;
     color: #ffffff;
+}
+
+.displayInput{
+    margin: 0.1em 0.5em;
+    font-size: 1.9em;
+}
+
+#solutionDisplay{
+    font-weight: bold;
 }
