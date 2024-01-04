@@ -1,6 +1,9 @@
 let numbner1 = "";
 let number2 = "";
 let operator = "";
+let number = document.querySelectorAll('.number');
+
+console.log(parseInt(number[3].textContent));
 
 let add = function(x, y) {
 return parseFloat(x) + parseFloat(y);
