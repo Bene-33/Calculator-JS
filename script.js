@@ -1,8 +1,17 @@
-let numbner1 = "";
+let number1 = "";
 let number2 = "";
 let operator = "";
-let number = document.querySelectorAll('.number');
+const displayInput = document.querySelector('#inputDisplay');
+const numberSelection = document.querySelectorAll('.number');
 
+number.addEventListener('click', () => {
+    for(let i = ''; i < number.length; i++){
+        let input1 = document.createElement('span');
+        return displayInput.appendChild(input1)
+
+    }
+
+});
 console.log(parseInt(number[3].textContent));
 
 let add = function(x, y) {
