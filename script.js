@@ -4,15 +4,12 @@ let operator = "";
 const displayInput = document.querySelector('#inputDisplay');
 const numberSelection = document.querySelectorAll('.number');
 
-number.addEventListener('click', () => {
-    for(let i = ''; i < number.length; i++){
-        let input1 = document.createElement('span');
-        return displayInput.appendChild(input1)
-
-    }
-
-});
-console.log(parseInt(number[3].textContent));
+// button generate number 
+for(let i = 0; i < numberSelection.length; i++){
+    numberSelection[i].addEventListener('click', () => {
+        console.log(parseInt(numberSelection[i].textContent));
+    })
+};
 
 let add = function(x, y) {
 return parseFloat(x) + parseFloat(y);
