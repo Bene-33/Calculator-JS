@@ -1,4 +1,4 @@
-let numberArray = [];
+const numberArray = [];
 let number1 = "";
 let number2 = "";
 let operator = "";
@@ -10,9 +10,10 @@ const numberSelection = document.querySelectorAll('.number');
 for(let i = 0; i < numberSelection.length; i++){
     numberSelection[i].addEventListener('click', () => {
         numberArray.push(parseInt(numberSelection[i].textContent));
-        console.log(numberArray)
+        let number1 = parseInt(numberArray.join(""));
     });
 };
+
 
 //calculation functions
 let add = function(x, y) {
