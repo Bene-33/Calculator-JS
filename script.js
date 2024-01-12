@@ -1,18 +1,25 @@
-const numberArray = [];
-let number1 = "";
-let number2 = "";
-let operator = "";
+let numberArray = [];
+let number1 = 1;
+let number2 = 0;
+let operator = "+";
+let solution = "";
 const displayInput = document.querySelector('#inputDisplay');
 const numberSelection = document.querySelectorAll('.number');
+const calculate = document.querySelector('#equal');
+displayInput.textContent = number1 + operator + number2;
 
-
+/// still needs to be fixed; for loop working, 
+///but doesnt´return the number1
 // define first number of calculation
 for(let i = 0; i < numberSelection.length; i++){
     numberSelection[i].addEventListener('click', () => {
-        numberArray.push(parseInt(numberSelection[i].textContent));
-        let number1 = parseInt(numberArray.join(""));
-    });
+        numberArray.push(numberSelection[i].textContent);
+        number1 = parseInt(numberArray.join(""));
+               
+    });  
 };
+/////////////////////////
+
 
 
 //calculation functions
