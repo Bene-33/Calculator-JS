@@ -1,12 +1,14 @@
 let numberArray = [];
 let number1 = 1;
-let number2 = 0;
+let number2 = 2;
 let operator = "+";
-let solution = "";
+let solution = 3;
 const displayInput = document.querySelector('#inputDisplay');
+const  displaySolution = document.querySelector('#solutionDisplay');
 const numberSelection = document.querySelectorAll('.number');
 const calculate = document.querySelector('#equal');
 displayInput.textContent = number1 + operator + number2;
+displaySolution.textContent = solution;
 
 /// still needs to be fixed; for loop working, 
 ///but doesnt´return the number1
