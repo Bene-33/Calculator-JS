@@ -1,8 +1,8 @@
 let numberArray = [];
 let number1 = 1;
-let number2 = 2;
+let number2 = 5;
 let operator = "+";
-let solution = 3;
+let solution = 0;
 const displayInput = document.querySelector('#inputDisplay');
 const  displaySolution = document.querySelector('#solutionDisplay');
 const numberSelection = document.querySelectorAll('.number');
@@ -25,24 +25,24 @@ for(let i = 0; i < numberSelection.length; i++){
 
 
 //calculation functions
-let add = function(x, y) {
-return parseFloat(x) + parseFloat(y);
+function add(x, y) {
+    return parseFloat(x) + parseFloat(y);
 };
 
-let substract = function (x, y) {
+function substract(x, y) {
     return parseFloat(x) - parseFloat(y);
 };
 
-let multiply = function(x,y){
+function multiply(x,y){
     return parseFloat(x) * parseFloat(y);
 };
 
-let divide = function(x,y){
+function divide(x,y){
     return parseFloat(x) / parseFloat(y);
 };
 
 // make the calculation 
-let operate = function(num1, num2, operator) {
+function operate(num1, num2, operator) {
     if (operator === '+' ) {
         return add(num1, num2);
     }
