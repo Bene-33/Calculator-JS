@@ -4,9 +4,10 @@ let number2 = 5;
 let operator = "+";
 let solution = 6;
 const displayInput = document.querySelector('#inputDisplay');
-const  displaySolution = document.querySelector('#solutionDisplay');
+const displaySolution = document.querySelector('#solutionDisplay');
 const numberSelection = document.querySelectorAll('.number');
 const calculate = document.querySelector('#equal');
+const operatorSelection = document.querySelector('#operator');
 displayInput.textContent = number1 + operator + number2;
 displaySolution.textContent = solution;
 
@@ -18,7 +19,6 @@ function selectFirstNumber(){
         numberSelection[i].addEventListener('click', () => {
             numberArray.push(numberSelection[i].textContent);
             number1 = parseInt(numberArray.join(""));
-                
         });  
     }; 
 };
@@ -26,29 +26,25 @@ function selectFirstNumber(){
 
 //define number2 -like number 1 (if it´s then working)- but only if operator is not ""
 
-function setOperator(){
-    //add eventlistner for each operator and update the operator
-
-};
+//add eventlistner for each operator and update the operator
 
 
 //calculation functions
-//instead of return update the global solution variable
 // round solution to 2 decimal 
 function add(x, y) {
-    return parseFloat(x) + parseFloat(y);
+    solution = Math.round((parseFloat(x) + parseFloat(y))*100)/100;
 };
 
 function substract(x, y) {
-    return parseFloat(x) - parseFloat(y);
+    solution = Math.round((parseFloat(x) - parseFloat(y))*100)/100;
 };
 
 function multiply(x,y){
-    return parseFloat(x) * parseFloat(y);
+    solution = Math.round((parseFloat(x) * parseFloat(y))*100)/100;
 };
 
 function divide(x,y){
-    return parseFloat(x) / parseFloat(y);
+    solution = Math.round((parseFloat(x) / parseFloat(y))*100)/100;
 
     //add a message if try to divide with 0
 };
