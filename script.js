@@ -1,6 +1,6 @@
 let numberArray = [];
 let number1 = 1;
-let number2 = 5;
+let number2 = 2;
 let operator = "+";
 let solution = 6;
 const displayInput = document.querySelector('#inputDisplay');
@@ -30,7 +30,6 @@ function selectFirstNumber(){
 
 
 //calculation functions
-// round solution to 2 decimal 
 function add(x, y) {
     solution = Math.round((parseFloat(x) + parseFloat(y))*100)/100;
 };
@@ -50,12 +49,8 @@ function divide(x,y){
     else{
         solution = Math.round((parseFloat(x) / parseFloat(y))*100)/100;
     }
-   
-
-    //add a message if try to divide with 0
 };
 
-console.log(divide(2,0), solution)
 // make the calculation 
 // modifie function to check if solution is calculated, then use the solution instead use number1
 //check to implement the call function if after [number operator number] another operator is used to first operate []
@@ -77,7 +72,11 @@ function operate(num1, num2, operator) {
         return "error"
     }
 };
-//add eventlistener to equal sign and call operate function
+
+calculate.addEventListener('click', () => {
+    operate(number1, number2, operator)
+});
+
 
 //add AC function to start fresh without any number set 
 
