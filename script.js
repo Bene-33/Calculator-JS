@@ -32,15 +32,6 @@ for(let i = 0; i < numberButton.length; i++){
         displayInput.textContent = number1 + operator + number2;
     });  
 };
-    if(operator !== ""){
-        for(let i = 0; i < numberButton.length; i++){
-            numberButton[i].addEventListener('click', () => {
-                numberArray.push(numberButton[i].textContent);
-                number2 = parseInt(numberArray.join(""));
-                displayInput.textContent = number1 + operator + number2;
-            });  
-        };
-    };
 
 //define number2 -like number 1 (if it´s then working)- but only if operator is not ""
 
