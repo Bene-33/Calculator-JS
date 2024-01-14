@@ -2,7 +2,7 @@ let numberArray = [];
 let number1 = "";
 let number2 = "";
 let operator = "";
-let solution = 6;
+let solution = "";
 const displayInput = document.querySelector('#inputDisplay');
 const displaySolution = document.querySelector('#solutionDisplay');
 const numberButton = document.querySelectorAll('.number');
@@ -12,9 +12,6 @@ const timesButton = document.querySelector('#operatorTimes');
 const substractButton = document.querySelector('#operatorSubstract');
 const addButton = document.querySelector('#operatorAdd');
 const acButton = document.querySelector('#acButton');
-
-displayInput.textContent = number1 + operator + number2;
-displaySolution.textContent = solution;
 
 /// still needs to be fixed; for loop working, 
 ///but doesnt´return the number1
@@ -55,22 +52,27 @@ addButton.addEventListener('click', () => {
 //calculation functions
 function add(x, y) {
     solution = Math.round((parseFloat(x) + parseFloat(y))*100)/100;
+    displaySolution.textContent = solution;
 };
 
 function substract(x, y) {
     solution = Math.round((parseFloat(x) - parseFloat(y))*100)/100;
+    displaySolution.textContent = solution;
 };
 
 function multiply(x,y){
     solution = Math.round((parseFloat(x) * parseFloat(y))*100)/100;
+    displaySolution.textContent = solution;
 };
 
 function divide(x,y){
-    if(y === 0){
-        solution = "error, you should not divide with '0'"
+    if(parseInt(y) === 0){
+        displaySolution.textContent = "error"
+        alert("you can not divide with '0'")
     }
     else{
         solution = Math.round((parseFloat(x) / parseFloat(y))*100)/100;
+        displaySolution.textContent = solution;
     }
 };
 
@@ -105,4 +107,6 @@ acButton.addEventListener('click', () => {
     number1 = "";
     number2 = "";
     operator = "";
+    displayInput.textContent = number1 + operator +number2;
+    displaySolution.textContent = solution;
 });
