@@ -13,8 +13,16 @@ const substractButton = document.querySelector('#operatorSubstract');
 const addButton = document.querySelector('#operatorAdd');
 const acButton = document.querySelector('#acButton');
 
-/// still needs to be fixed; for loop working, 
-///but doesnt´return the number1
+//reset everything and start with a fresh calculation
+acButton.addEventListener('click', () => {
+    number1 = "";
+    number2 = "";
+    operator = "";
+    numberArray = [];
+    displayInput.textContent = number1 + operator + number2;
+    displaySolution.textContent = solution;
+});
+
 // define first number of calculation
 
 for(let i = 0; i < numberButton.length; i++){
@@ -24,7 +32,15 @@ for(let i = 0; i < numberButton.length; i++){
         displayInput.textContent = number1 + operator + number2;
     });  
 };
-/////////////////////////
+    if(operator !== ""){
+        for(let i = 0; i < numberButton.length; i++){
+            numberButton[i].addEventListener('click', () => {
+                numberArray.push(numberButton[i].textContent);
+                number2 = parseInt(numberArray.join(""));
+                displayInput.textContent = number1 + operator + number2;
+            });  
+        };
+    };
 
 //define number2 -like number 1 (if it´s then working)- but only if operator is not ""
 
@@ -103,10 +119,3 @@ calculate.addEventListener('click', () => {
 });
 
 
-acButton.addEventListener('click', () => {
-    number1 = "";
-    number2 = "";
-    operator = "";
-    displayInput.textContent = number1 + operator +number2;
-    displaySolution.textContent = solution;
-});
