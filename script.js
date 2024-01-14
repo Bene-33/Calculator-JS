@@ -12,6 +12,7 @@ const divideButton = document.querySelector('#operatorDivide');
 const timesButton = document.querySelector('#operatorTimes');
 const substractButton = document.querySelector('#operatorSubstract');
 const addButton = document.querySelector('#operatorAdd');
+const acButton = document.querySelector('#acButton');
 
 displayInput.textContent = number1 + operator + number2;
 displaySolution.textContent = solution;
@@ -88,5 +89,8 @@ calculate.addEventListener('click', () => {
 });
 
 
-//add AC function to start fresh without any number set 
-
+acButton.addEventListener('click', () => {
+    number1 = "";
+    number2 = "";
+    operator = "";
+});
