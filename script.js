@@ -1,9 +1,8 @@
 let numberArray = [];
-let number1 = 1;
-let number2 = 2;
-let operator = "+";
+let number1 = "";
+let number2 = "";
+let operator = "";
 let solution = 6;
-let math;
 const displayInput = document.querySelector('#inputDisplay');
 const displaySolution = document.querySelector('#solutionDisplay');
 const numberButton = document.querySelectorAll('.number');
@@ -20,25 +19,38 @@ displaySolution.textContent = solution;
 /// still needs to be fixed; for loop working, 
 ///but doesnt´return the number1
 // define first number of calculation
-function selectFirstNumber(){
-    for(let i = 0; i < numberButton.length; i++){
-        numberButton[i].addEventListener('click', () => {
-            numberArray.push(numberButton[i].textContent);
-            number1 = parseInt(numberArray.join(""));
-        });  
-    }; 
+
+for(let i = 0; i < numberButton.length; i++){
+    numberButton[i].addEventListener('click', () => {
+        numberArray.push(numberButton[i].textContent);
+        number1 = parseInt(numberArray.join(""));
+        displayInput.textContent = number1 + operator + number2;
+    });  
 };
 /////////////////////////
 
 //define number2 -like number 1 (if it´s then working)- but only if operator is not ""
 
 //update operator variable
-divideButton.onclick = () => operator = "/";
-timesButton.onclick = () => operator = "*";
-substractButton.onclick = () => operator = "-";
-addButton.onclick = () => operator = "+";
+divideButton.addEventListener('click', () => {
+    operator = "/";
+    displayInput.textContent = number1 + operator + number2;
+});
 
+timesButton.addEventListener('click', () => {
+    operator = "*";
+    displayInput.textContent = number1 + operator + number2;
+});
 
+substractButton.addEventListener('click', () => {
+    operator = "-";
+    displayInput.textContent = number1 + operator + number2;
+});
+
+addButton.addEventListener('click', () => {
+    operator = "/";
+    displayInput.textContent = number1 + operator + number2;
+});
 
 //calculation functions
 function add(x, y) {
