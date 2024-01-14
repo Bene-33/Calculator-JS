@@ -5,9 +5,13 @@ let operator = "+";
 let solution = 6;
 const displayInput = document.querySelector('#inputDisplay');
 const displaySolution = document.querySelector('#solutionDisplay');
-const numberSelection = document.querySelectorAll('.number');
+const numberButton = document.querySelectorAll('.number');
 const calculate = document.querySelector('#equal');
-const operatorSelection = document.querySelector('#operator');
+const divideButton = document.querySelector('.operatorDivide').textContent;
+const timesButton = document.querySelector('.operatorTimes').textContent;
+const substractButton = document.querySelector('.operatorSubstract').textContent;
+const addButton = document.querySelector('.operatorAdd').textContent;
+
 displayInput.textContent = number1 + operator + number2;
 displaySolution.textContent = solution;
 
@@ -15,9 +19,9 @@ displaySolution.textContent = solution;
 ///but doesnt´return the number1
 // define first number of calculation
 function selectFirstNumber(){
-    for(let i = 0; i < numberSelection.length; i++){
-        numberSelection[i].addEventListener('click', () => {
-            numberArray.push(numberSelection[i].textContent);
+    for(let i = 0; i < numberButton.length; i++){
+        numberButton[i].addEventListener('click', () => {
+            numberArray.push(numberButton[i].textContent);
             number1 = parseInt(numberArray.join(""));
         });  
     }; 
@@ -28,6 +32,8 @@ function selectFirstNumber(){
 
 //add eventlistner for each operator and update the operator
 
+
+console.log(substractOperator);
 
 //calculation functions
 function add(x, y) {
