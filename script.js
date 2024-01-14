@@ -44,11 +44,18 @@ function multiply(x,y){
 };
 
 function divide(x,y){
-    solution = Math.round((parseFloat(x) / parseFloat(y))*100)/100;
+    if(y === 0){
+        solution = "error, you should not divide with '0'"
+    }
+    else{
+        solution = Math.round((parseFloat(x) / parseFloat(y))*100)/100;
+    }
+   
 
     //add a message if try to divide with 0
 };
 
+console.log(divide(2,0), solution)
 // make the calculation 
 // modifie function to check if solution is calculated, then use the solution instead use number1
 //check to implement the call function if after [number operator number] another operator is used to first operate []
