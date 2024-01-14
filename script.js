@@ -3,14 +3,15 @@ let number1 = 1;
 let number2 = 2;
 let operator = "+";
 let solution = 6;
+let math;
 const displayInput = document.querySelector('#inputDisplay');
 const displaySolution = document.querySelector('#solutionDisplay');
 const numberButton = document.querySelectorAll('.number');
 const calculate = document.querySelector('#equal');
-const divideButton = document.querySelector('.operatorDivide').textContent;
-const timesButton = document.querySelector('.operatorTimes').textContent;
-const substractButton = document.querySelector('.operatorSubstract').textContent;
-const addButton = document.querySelector('.operatorAdd').textContent;
+const divideButton = document.querySelector('#operatorDivide');
+const timesButton = document.querySelector('#operatorTimes');
+const substractButton = document.querySelector('#operatorSubstract');
+const addButton = document.querySelector('#operatorAdd');
 
 displayInput.textContent = number1 + operator + number2;
 displaySolution.textContent = solution;
@@ -30,10 +31,13 @@ function selectFirstNumber(){
 
 //define number2 -like number 1 (if it´s then working)- but only if operator is not ""
 
-//add eventlistner for each operator and update the operator
+//update operator variable
+divideButton.onclick = () => operator = "/";
+timesButton.onclick = () => operator = "*";
+substractButton.onclick = () => operator = "-";
+addButton.onclick = () => operator = "+";
 
 
-console.log(substractOperator);
 
 //calculation functions
 function add(x, y) {
