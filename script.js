@@ -1,5 +1,6 @@
-let numberArray = [];
-let number1 = "";
+let numberArray1 = [];
+let numberArray2 = [];
+let number1 = "0";
 let number2 = "";
 let operator = "";
 let solution = "";
@@ -15,46 +16,69 @@ const acButton = document.querySelector('#acButton');
 
 //reset everything and start with a fresh calculation
 acButton.addEventListener('click', () => {
-    number1 = "";
+    number1 = "0";
     number2 = "";
     operator = "";
-    numberArray = [];
+    numberArray1 = [];
+    numberArray2 = [];
     solution = "";
     displayInput.textContent = number1 + operator + number2;
     displaySolution.textContent = solution;
 });
-
+setNumber1();
 // define first number of calculation
-
-for(let i = 0; i < numberButton.length; i++){
-    numberButton[i].addEventListener('click', () => {
-        numberArray.push(numberButton[i].textContent);
-        number1 = parseInt(numberArray.join(""));
-        displayInput.textContent = number1 + operator + number2;
-    });  
+function setNumber1(){
+    if(number1 === ""){
+        console.log("number1")
+        for(let i = 0; i < numberButton.length; i++){
+            numberButton[i].addEventListener('click', () => {
+                numberArray1.push(numberButton[i].textContent);
+                number1 = parseInt(numberArray1.join(""));
+                displayInput.textContent = number1 + operator + number2;
+            });  
+        };
+        numberArray1 = [];
+    };
 };
 
 //define number2 -like number 1 (if it´s then working)- but only if operator is not ""
+function setNumber2(){
+    if(operator !== ""){
+    console.log("number2")
+        for(let i = 0; i < numberButton.length; i++){
+            numberButton[i].addEventListener('click', () => {
+                numberArray2.push(numberButton[i].textContent);
+                number2 = parseInt(numberArray2.join(""));
+                displayInput.textContent = number1 + operator + number2;
+            });  
+            numberArray2 = [];
+        };
+    }; 
+};
 
 //update operator variable
 divideButton.addEventListener('click', () => {
     operator = "/";
     displayInput.textContent = number1 + operator + number2;
+    setNumber2();
 });
 
 timesButton.addEventListener('click', () => {
     operator = "*";
     displayInput.textContent = number1 + operator + number2;
+    setNumber2();
 });
 
 substractButton.addEventListener('click', () => {
     operator = "-";
     displayInput.textContent = number1 + operator + number2;
+    setNumber2();
 });
 
 addButton.addEventListener('click', () => {
-    operator = "/";
+    operator = "+";
     displayInput.textContent = number1 + operator + number2;
+    setNumber2();
 });
 
 //calculation functions
