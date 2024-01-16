@@ -1,6 +1,6 @@
 let numberArray1 = [];
 let numberArray2 = [];
-let number1 = "0";
+let number1 = "";
 let number2 = "";
 let operator = "";
 let solution = "";
@@ -16,7 +16,7 @@ const acButton = document.querySelector('#acButton');
 
 //reset everything and start with a fresh calculation
 acButton.addEventListener('click', () => {
-    number1 = "0";
+    number1 = "";
     number2 = "";
     operator = "";
     numberArray1 = [];
@@ -25,10 +25,12 @@ acButton.addEventListener('click', () => {
     displayInput.textContent = number1 + operator + number2;
     displaySolution.textContent = solution;
 });
+
 setNumber1();
 // define first number of calculation
+////// deactivate function, after operator ist set to not call it when i want to set up number2
 function setNumber1(){
-    if(number1 === ""){
+    if(numberArray1 === ""){
         console.log("number1")
         for(let i = 0; i < numberButton.length; i++){
             numberButton[i].addEventListener('click', () => {
@@ -42,8 +44,10 @@ function setNumber1(){
 };
 
 //define number2 -like number 1 (if it´s then working)- but only if operator is not ""
+////// number2 is beeing populated as often the function was called before so, the function is called 2 times, 
+////// then AC => operator and set number2 => number2 is set 2 times
 function setNumber2(){
-    if(operator !== ""){
+    if(operator != ""){
     console.log("number2")
         for(let i = 0; i < numberButton.length; i++){
             numberButton[i].addEventListener('click', () => {
@@ -109,6 +113,7 @@ function divide(x,y){
 };
 
 // make the calculation 
+// if no number1 is set set number1 = 0 
 // modifie function to check if solution is calculated, then use the solution instead use number1
 //check to implement the call function if after [number operator number] another operator is used to first operate []
 //then use solution + new operator keep doing till equal is pressed
