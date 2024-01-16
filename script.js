@@ -19,6 +19,7 @@ acButton.addEventListener('click', () => {
     number2 = "";
     operator = "";
     numberArray = [];
+    solution = "";
     displayInput.textContent = number1 + operator + number2;
     displaySolution.textContent = solution;
 });
