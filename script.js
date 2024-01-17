@@ -43,18 +43,14 @@ if(operator === ""){
 
 
 //define number2 -like number 1 (if it´s then working)- but only if operator is not ""
-////// number2 is beeing populated as often the function was called before so, the function is called 2 times, 
-////// then AC => operator and set number2 => number2 is set 2 times
-function setNumber2(){
-    for(let i = 0; i < numberButton.length; i++){
-        numberButton[i].addEventListener('click', () => {
-            numberArray2.push(numberButton[i].textContent);
-            number2 = parseInt(numberArray2.join(""));
-            displayInput.textContent = number1 + operator + number2;
-        });  
-        numberArray2 = [];
-    };
-}; 
+for(let i = 0; i < numberButton.length; i++){
+    numberButton[i].addEventListener('click', () => {
+        numberArray2.push(numberButton[i].textContent);
+        number2 = parseInt(numberArray2.join(""));
+        displayInput.textContent = number1 + operator + number2;
+    });  
+    numberArray2 = [];
+};
 
 
 //update operator variable
