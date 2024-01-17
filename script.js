@@ -25,16 +25,14 @@ acButton.addEventListener('click', () => {
     numberArray1 = [];
     numberArray2 = [];
     solution = "";
-    let previeousKeyType = "ac";
+    previeousKeyType = "ac";
     displayInput.textContent = number1 + operator + number2;
     displaySolution.textContent = solution;
     console.log(previeousKeyType);
 });
 
-// define first number of calculation
-////// deactivate function, after operator ist set to not call it when i want to set up number2
-
-if(previeousKeyType === ""){
+// define first number of the calculation
+if(previeousKeyType !== "operator"){
     for(let i = 0; i < numberButton.length; i++){
         numberButton[i].addEventListener('click', () => {
             numberArray1.push(numberButton[i].textContent);
@@ -46,7 +44,8 @@ if(previeousKeyType === ""){
     };
 };
 
-//define number2 -like number 1 (if it´s then working)- but only if operator is not ""
+// define second number of the calculation
+////if not working as intended
 if(previeousKeyType === "operator"){
     for(let i = 0; i < numberButton.length; i++){
         numberButton[i].addEventListener('click', () => {
