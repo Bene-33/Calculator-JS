@@ -34,7 +34,7 @@ for(let i = 0; i < numberButton.length; i++){
             number1 = parseInt(numberArray1.join(""));
             displayInput.textContent = number1 + operator + number2;
         };    
-    });  
+    });
 };
 
 // define second number of the calculation
@@ -98,7 +98,6 @@ function divide(x,y){
 };
 
 // make the calculation 
-// if no number1 is set set number1 = 0 
 // modifie function to check if solution is calculated, then use the solution instead use number1
 //check to implement the call function if after [number operator number] another operator is used to first operate []
 //then use solution + new operator keep doing till equal is pressed
@@ -121,6 +120,9 @@ function operate(num1, num2, operator) {
 };
 
 calculate.addEventListener('click', () => {
+    if(number1 === ""){
+        number1 = 0;
+    }
     operate(number1, number2, operator)
 });
 
