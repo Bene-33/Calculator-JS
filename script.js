@@ -1,6 +1,7 @@
 let numberArray1 = [];
 let numberArray2 = [];
 let number1 = "";
+let numberSet = "unSet";
 let number2 = "";
 let operator = "";
 let solution = "";
@@ -26,20 +27,17 @@ acButton.addEventListener('click', () => {
     displaySolution.textContent = solution;
 });
 
-
 // define first number of calculation
 ////// deactivate function, after operator ist set to not call it when i want to set up number2
-if(operator === ""){
-    console.log("number1")
-    for(let i = 0; i < numberButton.length; i++){
-        numberButton[i].addEventListener('click', () => {
-            numberArray1.push(numberButton[i].textContent);
-            number1 = parseInt(numberArray1.join(""));
-            displayInput.textContent = number1 + operator + number2;
-        });  
-    };
+for(let i = 0; i < numberButton.length; i++){
+    numberButton[i].addEventListener('click', () => {
+        numberArray1.push(numberButton[i].textContent);
+        number1 = parseInt(numberArray1.join(""));
+        displayInput.textContent = number1 + operator + number2;
+    });  
     numberArray1 = [];
 };
+
 
 
 //define number2 -like number 1 (if it´s then working)- but only if operator is not ""
@@ -51,6 +49,7 @@ for(let i = 0; i < numberButton.length; i++){
     });  
     numberArray2 = [];
 };
+
 
 
 //update operator variable
