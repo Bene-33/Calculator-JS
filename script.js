@@ -7,7 +7,7 @@ const timesButton = document.querySelector('#operatorTimes');
 const substractButton = document.querySelector('#operatorSubstract');
 const addButton = document.querySelector('#operatorAdd');
 const acButton = document.querySelector('#acButton');
-let previeousKeyType = "";
+let previousKeyType = "";
 let numberArray1 = [];
 let numberArray2 = [];
 let number1 = "";
@@ -16,7 +16,7 @@ let operator = "";
 let solution = "";
 
 
-console.log(previeousKeyType);
+console.log(previousKeyType);
 //reset everything and start with a fresh calculation
 acButton.addEventListener('click', () => {
     number1 = "";
@@ -25,66 +25,67 @@ acButton.addEventListener('click', () => {
     numberArray1 = [];
     numberArray2 = [];
     solution = "";
-    previeousKeyType = "ac";
+    previousKeyType = "ac";
     displayInput.textContent = number1 + operator + number2;
     displaySolution.textContent = solution;
     console.log(previeousKeyType);
 });
 
 // define first number of the calculation
-if(previeousKeyType !== "operator"){
-    for(let i = 0; i < numberButton.length; i++){
-        numberButton[i].addEventListener('click', () => {
+for(let i = 0; i < numberButton.length; i++){
+    numberButton[i].addEventListener('click', () => {
+        if(previousKeyType !== "operator"){
             numberArray1.push(numberButton[i].textContent);
             number1 = parseInt(numberArray1.join(""));
-            previeousKeyType = "number1";
+            previousKeyType = "number1";
             displayInput.textContent = number1 + operator + number2;
-            console.log(previeousKeyType);
-        });  
-    };
+            console.log(previousKeyType);
+        };    
+    });  
 };
 
 // define second number of the calculation
 ////if not working as intended
-if(previeousKeyType === "operator"){
-    for(let i = 0; i < numberButton.length; i++){
-        numberButton[i].addEventListener('click', () => {
+for(let i = 0; i < numberButton.length; i++){
+    numberButton[i].addEventListener('click', () => {
+        if(previousKeyType === "operator"){
             numberArray2.push(numberButton[i].textContent);
             number2 = parseInt(numberArray2.join(""));
-            previeousKeyType = "number2";
+            previousKeyType = "number2";
             displayInput.textContent = number1 + operator + number2;
-            console.log(previeousKeyType);
-        });  
-    };
+            console.log(previousKeyType);
+        };
+    });  
 };
+
 
 //update operator variable
 divideButton.addEventListener('click', () => {
     operator = "/";
-    previeousKeyType = "operator";
+    previousKeyType = "operator";
     displayInput.textContent = number1 + operator + number2;
-    console.log(previeousKeyType);
+    console.log(previousKeyType);
 });
 
 timesButton.addEventListener('click', () => {
     operator = "*";
-    previeousKeyType = "operator"
+    previousKeyType = "operator"
     displayInput.textContent = number1 + operator + number2;
-    console.log(previeousKeyType);
+    console.log(previousKeyType);
 });
 
 substractButton.addEventListener('click', () => {
     operator = "-";
-    previeousKeyType = "operator"
+    previousKeyType = "operator"
     displayInput.textContent = number1 + operator + number2;
-    console.log(previeousKeyType);
+    console.log(previousKeyType);
 });
 
 addButton.addEventListener('click', () => {
     operator = "+";
-    previeousKeyType = "operator"
+    previousKeyType = "operator"
     displayInput.textContent = number1 + operator + number2;
-    console.log(previeousKeyType);
+    console.log(previousKeyType);
 });
 
 //calculation functions
