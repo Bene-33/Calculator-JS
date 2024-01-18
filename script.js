@@ -55,23 +55,55 @@ for(let i = 0; i < numberButton.length; i++){
 
 //update operator variable
 divideButton.addEventListener('click', () => {
+    if(number1 !== "" & operator !== "" & number2 !== ""){
+        operate(number1, number2, operator);
+        number1 = solution;
+        operator = "/";
+        displaySolution.textContent = solution;
+    }
+    else{
     operator = "/";
     updateDisplay();
+    };
 });
 
 timesButton.addEventListener('click', () => {
+    if(number1 !== "" & operator !== "" & number2 !== ""){
+        operate(number1, number2, operator);
+        number1 = solution;
+        operator = "*";
+        displaySolution.textContent = solution;
+    }
+    else{
     operator = "*";
     updateDisplay();
+    };
 });
 
 substractButton.addEventListener('click', () => {
+    if(number1 !== "" & operator !== "" & number2 !== ""){
+        operate(number1, number2, operator);
+        number1 = solution;
+        operator = "-";
+        displaySolution.textContent = solution;
+    }
+    else{
     operator = "-";
     updateDisplay();
+    };
 });
 
 addButton.addEventListener('click', () => {
+    if(number1 !== "" & operator !== "" & number2 !== ""){
+        operate(number1, number2, operator);
+        number1 = solution;
+        operator = "+";
+        displaySolution.textContent = solution;
+    }
+    else{
     operator = "+";
     updateDisplay();
+    };
 });
 
 //calculation functions
@@ -79,42 +111,41 @@ function add(x, y) {
     solution = Math.round((parseFloat(x) + parseFloat(y))*100)/100
     number1 = solution;
     number2 = "";
+    operator = "";
     numberArray2 = [];
-    displaySolution.textContent = solution;
 };
 
 function substract(x, y) {
     solution = Math.round((parseFloat(x) - parseFloat(y))*100)/100;
     number1 = solution;
     number2 = "";
+    operator = "";
     numberArray2 = [];
-    displaySolution.textContent = solution;
 };
 
 function multiply(x,y){
     solution = Math.round((parseFloat(x) * parseFloat(y))*100)/100;
     number1 = solution;
     number2 = "";
+    operator = "";
     numberArray2 = [];
-    displaySolution.textContent = solution;
 };
 
 function divide(x,y){
     if(parseInt(y) === 0){
-        displaySolution.textContent = "error"
+        solution = "error"
         alert("you can not divide with '0'")
     }
     else{
         solution = Math.round((parseFloat(x) / parseFloat(y))*100)/100;
         number1 = solution;
         number2 = "";
+        operator = "";
         numberArray2 = [];
-        displaySolution.textContent = solution;
     }
 };
 
 // make the calculation 
-// modifie function to check if solution is calculated, then use the solution instead use number1
 //check to implement the call function if after [number operator number] another operator is used to first operate []
 //then use solution + new operator keep doing till equal is pressed
 function operate(num1, num2, operator) {
@@ -140,6 +171,7 @@ calculate.addEventListener('click', () => {
         number1 = 0;
     }
     operate(number1, number2, operator)
+    displaySolution.textContent = solution;
 });
 
 
