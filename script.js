@@ -8,6 +8,7 @@ const substractButton = document.querySelector('#operatorSubstract');
 const addButton = document.querySelector('#operatorAdd');
 const acButton = document.querySelector('#acButton');
 const backButton = document.querySelector('#backButton');
+const decimalButton = document.querySelector('#dot');
 let numberArray1 = [];
 let numberArray2 = [];
 let number1 = "";
@@ -49,7 +50,7 @@ for(let i = 0; i < numberButton.length; i++){
     numberButton[i].addEventListener('click', () => {
         if(operator === ""){
             numberArray1.push(numberButton[i].textContent);
-            number1 = parseInt(numberArray1.join(""));
+            number1 = numberArray1.join("");
             updateDisplay();
         };
     });
@@ -60,11 +61,24 @@ for(let i = 0; i < numberButton.length; i++){
     numberButton[i].addEventListener('click', () => {
         if(operator !== ""){
             numberArray2.push(numberButton[i].textContent);
-            number2 = parseInt(numberArray2.join(""));
+            number2 = numberArray2.join("");
             updateDisplay();
         };
     });
 };
+
+decimalButton.addEventListener('click', () => {
+    if(operator === ""){
+        numberArray1.push(decimalButton.textContent);
+        number1 = numberArray1.join("");
+        updateDisplay();
+    }
+    else if (operator !==""){
+        numberArray2.push(decimalButton.textContent);
+        number2 = numberArray2.join("");
+        updateDisplay();
+    }
+}); 
 
 
 //update operator variable
