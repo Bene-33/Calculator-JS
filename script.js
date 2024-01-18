@@ -14,6 +14,11 @@ let number2 = "";
 let operator = "";
 let solution = "";
 
+function updateDisplay(){
+    displayInput.textContent = number1 + operator + number2;
+    displaySolution.textContent = solution
+}
+
 //reset everything and start with a fresh calculation
 acButton.addEventListener('click', () => {
     number1 = "";
@@ -22,8 +27,7 @@ acButton.addEventListener('click', () => {
     numberArray1 = [];
     numberArray2 = [];
     solution = "";
-    displayInput.textContent = number1 + operator + number2;
-    displaySolution.textContent = solution;
+    updateDisplay();
 });
 
 // define first number of the calculation
@@ -32,7 +36,7 @@ for(let i = 0; i < numberButton.length; i++){
         if(operator === ""){
             numberArray1.push(numberButton[i].textContent);
             number1 = parseInt(numberArray1.join(""));
-            displayInput.textContent = number1 + operator + number2;
+            updateDisplay();
         };    
     });
 };
@@ -43,7 +47,7 @@ for(let i = 0; i < numberButton.length; i++){
         if(operator !== ""){
             numberArray2.push(numberButton[i].textContent);
             number2 = parseInt(numberArray2.join(""));
-            displayInput.textContent = number1 + operator + number2;
+            updateDisplay();
         };
     });  
 };
@@ -52,38 +56,38 @@ for(let i = 0; i < numberButton.length; i++){
 //update operator variable
 divideButton.addEventListener('click', () => {
     operator = "/";
-    displayInput.textContent = number1 + operator + number2;
+    updateDisplay();
 });
 
 timesButton.addEventListener('click', () => {
     operator = "*";
-    displayInput.textContent = number1 + operator + number2;
+    updateDisplay();
 });
 
 substractButton.addEventListener('click', () => {
     operator = "-";
-    displayInput.textContent = number1 + operator + number2;
+    updateDisplay();
 });
 
 addButton.addEventListener('click', () => {
     operator = "+";
-    displayInput.textContent = number1 + operator + number2;
+    updateDisplay();
 });
 
 //calculation functions
 function add(x, y) {
     solution = Math.round((parseFloat(x) + parseFloat(y))*100)/100;
-    displaySolution.textContent = solution;
+    updateDisplay();
 };
 
 function substract(x, y) {
     solution = Math.round((parseFloat(x) - parseFloat(y))*100)/100;
-    displaySolution.textContent = solution;
+    updateDisplay();
 };
 
 function multiply(x,y){
     solution = Math.round((parseFloat(x) * parseFloat(y))*100)/100;
-    displaySolution.textContent = solution;
+    updateDisplay();
 };
 
 function divide(x,y){
@@ -93,7 +97,7 @@ function divide(x,y){
     }
     else{
         solution = Math.round((parseFloat(x) / parseFloat(y))*100)/100;
-        displaySolution.textContent = solution;
+        updateDisplay();
     }
 };
 
