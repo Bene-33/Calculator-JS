@@ -16,6 +16,7 @@ let number2 = "";
 let operator = "";
 let solution = "";
 
+
 function updateDisplay(){
     displayInput.textContent = number1 + operator + number2;
 }
@@ -57,6 +58,22 @@ for(let i = 0; i < numberButton.length; i++){
         else if(operator !== ""){
             numberArray2.push(numberButton[i].textContent);
             number2 = numberArray2.join("");
+            updateDisplay();
+        };
+    });
+};
+
+//define numbers with keys input
+for(let i = 0; i < event.length; i++){
+    document.addEventListener('keydown', (event) => {
+        if(operator === ""){
+                numberArray1.push(event.key[i]);
+                number1 = numberArray1;
+                updateDisplay();
+        }
+        else if(operator !== ""){
+            numberArray2.push(event[i]);
+            number2 = numberArray2;
             updateDisplay();
         };
     });
