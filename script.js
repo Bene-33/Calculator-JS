@@ -16,7 +16,6 @@ let solution = "";
 
 function updateDisplay(){
     displayInput.textContent = number1 + operator + number2;
-    displaySolution.textContent = solution
 }
 
 //reset everything and start with a fresh calculation
@@ -27,6 +26,7 @@ acButton.addEventListener('click', () => {
     numberArray1 = [];
     numberArray2 = [];
     solution = "";
+    displaySolution.textContent = "";
     updateDisplay();
 });
 
@@ -37,7 +37,7 @@ for(let i = 0; i < numberButton.length; i++){
             numberArray1.push(numberButton[i].textContent);
             number1 = parseInt(numberArray1.join(""));
             updateDisplay();
-        };    
+        };
     });
 };
 
@@ -49,7 +49,7 @@ for(let i = 0; i < numberButton.length; i++){
             number2 = parseInt(numberArray2.join(""));
             updateDisplay();
         };
-    });  
+    });
 };
 
 
@@ -76,18 +76,27 @@ addButton.addEventListener('click', () => {
 
 //calculation functions
 function add(x, y) {
-    solution = Math.round((parseFloat(x) + parseFloat(y))*100)/100;
-    updateDisplay();
+    solution = Math.round((parseFloat(x) + parseFloat(y))*100)/100
+    number1 = solution;
+    number2 = "";
+    numberArray2 = [];
+    displaySolution.textContent = solution;
 };
 
 function substract(x, y) {
     solution = Math.round((parseFloat(x) - parseFloat(y))*100)/100;
-    updateDisplay();
+    number1 = solution;
+    number2 = "";
+    numberArray2 = [];
+    displaySolution.textContent = solution;
 };
 
 function multiply(x,y){
     solution = Math.round((parseFloat(x) * parseFloat(y))*100)/100;
-    updateDisplay();
+    number1 = solution;
+    number2 = "";
+    numberArray2 = [];
+    displaySolution.textContent = solution;
 };
 
 function divide(x,y){
@@ -97,7 +106,10 @@ function divide(x,y){
     }
     else{
         solution = Math.round((parseFloat(x) / parseFloat(y))*100)/100;
-        updateDisplay();
+        number1 = solution;
+        number2 = "";
+        numberArray2 = [];
+        displaySolution.textContent = solution;
     }
 };
 
