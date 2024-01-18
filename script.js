@@ -68,12 +68,12 @@ for(let i = 0; i < numberButton.length; i++){
 };
 
 decimalButton.addEventListener('click', () => {
-    if(operator === ""){
+    if(operator === "" &! numberArray1.includes(".")){
         numberArray1.push(decimalButton.textContent);
         number1 = numberArray1.join("");
         updateDisplay();
     }
-    else if (operator !==""){
+    else if (operator !=="" &! numberArray2.includes(".")){
         numberArray2.push(decimalButton.textContent);
         number2 = numberArray2.join("");
         updateDisplay();
