@@ -32,15 +32,16 @@ acButton.addEventListener('click', () => {
     updateDisplay();
 });
 
+//delete the last input in the array
 backButton.addEventListener('click', () => {
-    if(numberArray1 !== "" & numberArray2 === ""){
+    if(number1 !== "" & number2 === ""){
         numberArray1.pop();
-        number1 = parseInt(numberArray1.join(""));
+        number1 = numberArray1.join("");
         updateDisplay();
     }
-    else if(numberArray2 !== ""){
+    else if(number2 !== ""){
         numberArray2.pop(); 
-        number2 = parseInt(numberArray2.join(""));
+        number2 = numberArray2.join("");
         updateDisplay();
     };
 });
@@ -67,6 +68,7 @@ for(let i = 0; i < numberButton.length; i++){
     });
 };
 
+//add decimal point to numbers
 decimalButton.addEventListener('click', () => {
     if(operator === "" &! numberArray1.includes(".")){
         numberArray1.push(decimalButton.textContent);
