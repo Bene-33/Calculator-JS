@@ -7,6 +7,7 @@ const timesButton = document.querySelector('#operatorTimes');
 const substractButton = document.querySelector('#operatorSubstract');
 const addButton = document.querySelector('#operatorAdd');
 const acButton = document.querySelector('#acButton');
+const backButton = document.querySelector('#backButton');
 let numberArray1 = [];
 let numberArray2 = [];
 let number1 = "";
@@ -28,6 +29,19 @@ acButton.addEventListener('click', () => {
     solution = "";
     displaySolution.textContent = "";
     updateDisplay();
+});
+
+backButton.addEventListener('click', () => {
+    if(numberArray1 !== "" & numberArray2 === ""){
+        numberArray1.pop();
+        number1 = parseInt(numberArray1.join(""));
+        updateDisplay();
+    }
+    else if(numberArray2 !== ""){
+        numberArray2.pop(); 
+        number2 = parseInt(numberArray2.join(""));
+        updateDisplay();
+    };
 });
 
 // define first number of the calculation
@@ -145,9 +159,7 @@ function divide(x,y){
     }
 };
 
-// make the calculation 
-//check to implement the call function if after [number operator number] another operator is used to first operate []
-//then use solution + new operator keep doing till equal is pressed
+// make the calculation
 function operate(num1, num2, operator) {
     if (operator === '+' ) {
         return add(num1, num2);
