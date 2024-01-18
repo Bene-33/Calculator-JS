@@ -46,21 +46,15 @@ backButton.addEventListener('click', () => {
     };
 });
 
-// define first number of the calculation
+// define number of the calculation
 for(let i = 0; i < numberButton.length; i++){
     numberButton[i].addEventListener('click', () => {
         if(operator === ""){
             numberArray1.push(numberButton[i].textContent);
             number1 = numberArray1.join("");
             updateDisplay();
-        };
-    });
-};
-
-// define second number of the calculation
-for(let i = 0; i < numberButton.length; i++){
-    numberButton[i].addEventListener('click', () => {
-        if(operator !== ""){
+        }
+        else if(operator !== ""){
             numberArray2.push(numberButton[i].textContent);
             number2 = numberArray2.join("");
             updateDisplay();
