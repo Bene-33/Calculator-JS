@@ -112,6 +112,22 @@ decimalButton.addEventListener('click', () => {
     }
 }); 
 
+//add decimal point to numbers with keyinput
+document.addEventListener('keydown', (event) => {
+    if(event.key === "," || event.key === "."){
+        if(operator === "" &! numberArray1.includes(".")){
+                numberArray1.push(".");
+                number1 = numberArray1.join("");
+                updateDisplay();
+            }
+        else if (operator !=="" &! numberArray2.includes(".")){
+            numberArray2.push(".");
+            number2 = numberArray2.join("");
+            updateDisplay();
+        }
+    };
+});
+
 //update operator variable
 divideButton.addEventListener('click', () => {
     if(number1 !== "" & operator !== "" & number2 !== ""){
