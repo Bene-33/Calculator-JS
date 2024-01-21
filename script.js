@@ -16,7 +16,6 @@ let number2 = "";
 let operator = "";
 let solution = "";
 
-
 function updateDisplay(){
     displayInput.textContent = number1 + operator + number2;
 }
@@ -51,7 +50,6 @@ backButton.addEventListener('click', () => {
 document.addEventListener('keydown', (event) => {
     if(number1 !== "" & number2 === ""){
         if(event.key === 'Backspace' || event.key === "Delete"){
-            console.log("test");
             numberArray1.pop();
             number1 = numberArray1.join("");
             updateDisplay();
@@ -65,7 +63,6 @@ document.addEventListener('keydown', (event) => {
         }
     };
 });
-
 
 // define number of the calculation
 for(let i = 0; i < numberButton.length; i++){
@@ -101,7 +98,6 @@ document.addEventListener('keydown', (event) => {
     }   
 });
 
-
 //add decimal point to numbers
 decimalButton.addEventListener('click', () => {
     if(operator === "" &! numberArray1.includes(".")){
@@ -115,7 +111,6 @@ decimalButton.addEventListener('click', () => {
         updateDisplay();
     }
 }); 
-
 
 //update operator variable
 divideButton.addEventListener('click', () => {
@@ -168,6 +163,22 @@ addButton.addEventListener('click', () => {
     operator = "+";
     updateDisplay();
     };
+});
+
+// operator key input
+document.addEventListener('keydown', (event) => {
+    if(number1 !== "" & operator !== "" & number2 !== ""){
+        if(event.key === '+' || event.key === '-' || event.key === '*' || event.key === '/'){
+            operate(number1, number2, operator);
+            number1 = solution;
+            operator = event.key;
+            displaySolution.textContent = solution;
+        }}
+    else{
+        if(event.key === '+' || event.key === '-' || event.key === '*' || event.key === '/'){
+            operator = event.key;
+            updateDisplay();
+        }};
 });
 
 //calculation functions
@@ -235,5 +246,6 @@ calculate.addEventListener('click', () => {
     operate(number1, number2, operator)
     displaySolution.textContent = solution;
 });
+
 
 
