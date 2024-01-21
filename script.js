@@ -32,6 +32,20 @@ acButton.addEventListener('click', () => {
     updateDisplay();
 });
 
+//reset everything and start with a fresh calculation with keyinput
+document.addEventListener('keydown', (event) => {
+    if(event.key === "Escape"){
+        number1 = "";
+        number2 = "";
+        operator = "";
+        numberArray1 = [];
+        numberArray2 = [];
+        solution = "";
+        displaySolution.textContent = "";
+        updateDisplay();
+    };
+});
+
 //delete the last input in the array
 backButton.addEventListener('click', () => {
     if(number1 !== "" & number2 === ""){
