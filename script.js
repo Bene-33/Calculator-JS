@@ -247,5 +247,13 @@ calculate.addEventListener('click', () => {
     displaySolution.textContent = solution;
 });
 
-
-
+//calculate with key Input
+document.addEventListener('keydown', (event) => {
+    if(event.key === "Enter"){
+        if(number1 === ""){
+            number1 = 0;
+        }
+        operate(number1, number2, operator)
+        displaySolution.textContent = solution;
+    }
+});
