@@ -47,6 +47,26 @@ backButton.addEventListener('click', () => {
     };
 });
 
+//delete the last input with key input
+document.addEventListener('keydown', (event) => {
+    if(number1 !== "" & number2 === ""){
+        if(event.key === 'Backspace' || event.key === "Delete"){
+            console.log("test");
+            numberArray1.pop();
+            number1 = numberArray1.join("");
+            updateDisplay();
+        }
+    }
+    else if(number2 !== ""){
+        if(event.key === 'Backspace' || event.key === "Delete"){
+            numberArray2.pop(); 
+            number2 = numberArray2.join("");
+            updateDisplay();
+        }
+    };
+});
+
+
 // define number of the calculation
 for(let i = 0; i < numberButton.length; i++){
     numberButton[i].addEventListener('click', () => {
