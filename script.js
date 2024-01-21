@@ -63,21 +63,24 @@ for(let i = 0; i < numberButton.length; i++){
     });
 };
 
-//define numbers with keys input
-for(let i = 0; i < event.length; i++){
-    document.addEventListener('keydown', (event) => {
-        if(operator === ""){
-                numberArray1.push(event.key[i]);
-                number1 = numberArray1;
-                updateDisplay();
-        }
-        else if(operator !== ""){
-            numberArray2.push(event[i]);
-            number2 = numberArray2;
+//key input Numbers
+document.addEventListener('keydown', (event) => {
+    if(operator === ""){
+        if(event.key >= '0' && event.key <= '9'){
+            numberArray1.push(event.key);
+            number1 = numberArray1.join("");
             updateDisplay();
-        };
-    });
-};
+        }
+    }  
+    else if(operator !== ""){
+        if(event.key >= '0' && event.key <= '9'){
+            numberArray2.push(event.key);
+            number2 = numberArray2.join("");
+            updateDisplay();
+        }
+    }   
+});
+
 
 //add decimal point to numbers
 decimalButton.addEventListener('click', () => {
